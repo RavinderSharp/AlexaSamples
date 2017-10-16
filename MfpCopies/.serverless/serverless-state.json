@@ -106,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/mfp-ddd/dev/1508144960465-2017-10-16T09:09:20.465Z/mfp-ddd.zip"
+                "S3Key": "serverless/mfp-ddd/dev/1508152733929-2017-10-16T11:18:53.929Z/mfp-ddd.zip"
               },
               "FunctionName": "mfp-ddd-dev-MfpCopies",
               "Handler": "src/index.handler",
@@ -125,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "MfpCopiesLambdaVersionWmulSim9JoTyajfGb7cekPw5c4IrGfZcxLIvrmEpc": {
+          "MfpCopiesLambdaVersion0ttsfuAE035okOb81dPInXVOqL5ApMlRvv8PrZDCSFQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "MfpCopiesLambdaFunction"
               },
-              "CodeSha256": "WmulSim9JoTyajfGb7cekPw5c/4IrGf+ZcxLIvrmEpc="
+              "CodeSha256": "0ttsfuAE035okOb81dPInXVOqL5ApMlRvv8PrZDCSFQ="
             }
           },
           "MfpCopiesLambdaPermissionAlexaSkill": {
@@ -158,7 +158,7 @@
           "MfpCopiesLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "MfpCopiesLambdaVersionWmulSim9JoTyajfGb7cekPw5c4IrGfZcxLIvrmEpc"
+              "Ref": "MfpCopiesLambdaVersion0ttsfuAE035okOb81dPInXVOqL5ApMlRvv8PrZDCSFQ"
             }
           }
         }
@@ -196,7 +196,7 @@
     "artifact": "/Users/ravindersinghl/Documents/NodePrac/gitsamples/AlexaSamples/MfpCopies/.serverless/mfp-ddd.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/mfp-ddd/dev/1508144960465-2017-10-16T09:09:20.465Z",
+    "artifactDirectoryName": "serverless/mfp-ddd/dev/1508152733929-2017-10-16T11:18:53.929Z",
     "artifact": "mfp-ddd.zip"
   }
 }

@@ -1,0 +1,5 @@
+module.exports.MFP_STATES = {
+  STARTMODE: '_STARTMODE',
+  COPIESMODE: '_COPIESMODE',
+  SCANMODE: '_SCANMODE'
+};

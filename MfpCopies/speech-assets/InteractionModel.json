@@ -1,0 +1,224 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GetCopies",
+      "samples": [
+        "Make Copies",
+        "Make {copies} copies",
+        "Make {copies} copies with {staple}",
+        "Make {copies} copies {side} with {colour} ",
+        "Make {copies} copies with {colour} {staple}",
+        "Make {copies} copies {side} with {colour} {staple}",
+        "set {copies}",
+        "set {staple}",
+        "set {side}",
+        "set {colour}"
+      ],
+      "slots": [
+        {
+          "name": "copies",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{copies} copies"
+          ]
+        },
+        {
+          "name": "staple",
+          "type": "Staple",
+          "samples": []
+        },
+        {
+          "name": "side",
+          "type": "Side",
+          "samples": []
+        },
+        {
+          "name": "colour",
+          "type": "Colour",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "ScanDocument",
+      "samples": [
+        "scan the document"
+      ],
+      "slots": []
+    }
+  ],
+  "types": [
+    {
+      "name": "Colour",
+      "values": [
+        {
+          "id": "2",
+          "name": {
+            "value": "color",
+            "synonyms": [
+              "color"
+            ]
+          }
+        },
+        {
+          "id": "1",
+          "name": {
+            "value": "monochrome",
+            "synonyms": [
+              "Black and white",
+              "Monochrome"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Side",
+      "values": [
+        {
+          "id": "1",
+          "name": {
+            "value": "one",
+            "synonyms": [
+              "one sided",
+              "1 sided"
+            ]
+          }
+        },
+        {
+          "id": "2",
+          "name": {
+            "value": "two",
+            "synonyms": [
+              "two sided",
+              "double sided",
+              "2 sided"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Staple",
+      "values": [
+        {
+          "id": "1",
+          "name": {
+            "value": "stapled",
+            "synonyms": [
+              "staple",
+              "stapled"
+            ]
+          }
+        },
+        {
+          "id": "2",
+          "name": {
+            "value": "not stapled",
+            "synonyms": []
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Confirm.Intent-GetCopies",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Are you sure to get  {side} sided  {copies} copies with {colour} and {staple} ?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetCopies.IntentSlot-copies",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "tell  count"
+        },
+        {
+          "type": "PlainText",
+          "value": "number of copies"
+        },
+        {
+          "type": "PlainText",
+          "value": "tell number of copies"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetCopies.IntentSlot-copies",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "confirm {copies}"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "GetCopies",
+        "confirmationRequired": true,
+        "prompts": {
+          "confirm": "Confirm.Intent-GetCopies"
+        },
+        "slots": [
+          {
+            "name": "copies",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetCopies.IntentSlot-copies",
+              "confirm": "Confirm.Intent-GetCopies.IntentSlot-copies"
+            }
+          },
+          {
+            "name": "staple",
+            "type": "Staple",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "side",
+            "type": "Side",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "colour",
+            "type": "Colour",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      }
+    ]
+  }
+}

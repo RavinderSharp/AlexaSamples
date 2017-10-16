@@ -1,0 +1,65 @@
+{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.9adfdea7-5f83-4dab-bb27-1a9ddd1a2fe3",
+    "application": {
+      "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+    },
+    "attributes": {
+      "STATE": "_COPIESMODE"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.e7ff35a7-6969-456a-bb47-b9ea9ccac443",
+    "timestamp": "2017-10-16T07:45:25Z",
+    "locale": "en-US",
+    "intent": {
+        "name": "GetCopies",
+        "confirmationStatus": "CONFIRMED",
+        "slots": {
+            "side": {
+                "name": "side",
+                "value": "two",
+                "confirmationStatus": "NONE"
+            },
+            "colour": {
+                "name": "colour",
+                "value": "monochrome",
+                "confirmationStatus": "NONE"
+            },
+            "copies": {
+                "name": "copies",
+                "value": "1",
+                "confirmationStatus": "NONE"
+            },
+            "staple": {
+                "name": "staple",
+                "value": "stapled",
+                "confirmationStatus": "NONE"
+            }
+        }
+    },
+    "dialogState": "COMPLETED"
+},
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}

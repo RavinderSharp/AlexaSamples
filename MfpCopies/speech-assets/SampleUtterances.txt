@@ -1,0 +1,19 @@
+GetCopies
+4 Param
+[1] copies       - Values[number], Mandatory
+[2] staple       - Values[staple | On,Off ], Default[On]
+[3] side         - Values[Single,Double or One, Two], Default[Double]
+[4] colour        - Values[Colour, Monochrome], Default [Colour]
+
+
+GetCopies
+  "Make Copies"
+  "Make {number} copies"
+  "Make {number} copies with {staple}"
+  "Make {number} copies {side} sided with {staple}"
+  "Make {number} copies {color} copy"
+  "Make me a {side} sided {color} copy {number} copies with {staple}"
+  - Number of copies
+    "How many copies"
+    "Number of copies"
+    "Copies count"

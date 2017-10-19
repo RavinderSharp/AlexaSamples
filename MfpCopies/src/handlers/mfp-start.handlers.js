@@ -8,10 +8,12 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.STARTMODE, {
     this.emit('NewSession'); // Uses the handler in newSessionHandlers
   },
   "GetCopies": function() {
+    console.log('startHandlers GetCopies ' + JSON.stringify(this.event, null, '\t'));
     this.handler.state = MFP_STATES.COPIESMODE;
     this.emitWithState("GetCopies");
   },
   "ScanDocument": function() {
+    console.log('startHandlers ScanDocument ' + JSON.stringify(this.event, null, '\t'));
     this.handler.state = MFP_STATES.SCANMODE;
     this.emitWithState("ScanDocument");
   },

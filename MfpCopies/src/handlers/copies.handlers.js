@@ -46,6 +46,9 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
       if (this.event.request.intent.slots.copies != null &&
         this.event.request.intent.slots.copies.value == undefined) {
         updatedIntent.slots.copies.value = this.event.session.attributes['copy'].copies;
+        if(this.event.session.attributes['copy'].copies > 1){
+          updatedIntent.slots.copies.confirmationStatus = 'CONFIRMED';
+        }
       }
 
       this.emit(":delegate", updatedIntent);
@@ -72,7 +75,6 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
         this.event.session.attributes['copy'].copies = this.event.request.intent.slots.copies.value.toLowerCase();
       }
 
-      console.log('GetCopies Deny' + JSON.stringify(this.event, null, '\t'));
       const slotToElicit = 'copies'
       const speechOutput = 'Which setting you wish to update?';
       const repromptSpeech = 'say set with property name'
@@ -81,8 +83,6 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
     } else if (this.event.request.dialogState == "COMPLETED") {
       if (this.event.request.intent.confirmationStatus === 'CONFIRMED') {
         let speechOutput = "Slots Completed";
-        console.log('GetCopies slot completed ' + JSON.stringify(this.event, null, '\t'));
-
         speechOutput = "Making " + this.event.request.intent.slots.side.value.toLowerCase() + "  sided ";
         speechOutput += this.event.request.intent.slots.colour.value.toLowerCase() + " ";
         speechOutput += this.event.request.intent.slots.copies.value.toLowerCase() + " copies ";
@@ -98,7 +98,7 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
   'AMAZON.HelpIntent': function() {
     const speechOutput = this.t('HELP_MESSAGE');
     const reprompt = this.t('HELP_MESSAGE');
-    console.log('copiesHandlers HelpIntent' + JSON.stringify(this.event.request, null, '\t'));
+    console.log('copiesHandlers HelpIntent' + JSON.stringify(this.event, null, '\t'));
     this.response.speak(speechOutput).listen(reprompt);
     this.emit(':responseReady');
   },
@@ -118,7 +118,7 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
     const speechOutput = this.t('HELP_MESSAGE');
     const reprompt = this.t('HELP_MESSAGE');
     this.handler.state = MFP_STATES.STARTMODE;
-    console.log('copiesHandlers Unhandled' + JSON.stringify(this.event.request, null, '\t'));
+    console.log('copiesHandlers Unhandled' + JSON.stringify(this.event, null, '\t'));
     this.response.speak(speechOutput).listen(reprompt);
     this.emit(':responseReady');
   }

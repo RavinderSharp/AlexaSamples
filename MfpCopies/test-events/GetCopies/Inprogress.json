@@ -1,0 +1,75 @@
+{
+    "version": "1.0",
+    "session": {
+        "new": false,
+        "sessionId": "amzn1.echo-api.session.b63e4cf3-6c7b-4199-a96a-fad21d9fdcc1",
+        "application": {
+            "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+        },
+        "attributes": {
+            "STATE": "_COPIESMODE",
+            "copy": {
+                "copies": "1",
+                "colour": "colour",
+                "side": "two",
+                "staple": "stapled"
+            }
+        },
+        "user": {
+            "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+        }
+    },
+    "context": {
+        "AudioPlayer": {
+            "playerActivity": "IDLE"
+        },
+        "System": {
+            "application": {
+                "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+            },
+            "device": {
+                "deviceId": "amzn1.ask.device.AEV3BGKBJHKCJDUEDVMZJ4Z3NM7Y54XIXBDA5XBDYG3IDW2WF4VUSZ3EZZFR3QENLYPLKHE7E3BZIHOGLEVBFMTB25ZPDPRO5AC2B5HBRXBOITW2SFNW7VZSV3S7I42GQZPEJBZZGNEHGWSZVBQNYZPY3JRQ",
+                "supportedInterfaces": {
+                    "AudioPlayer": {}
+                }
+            },
+            "apiEndpoint": "https://api.eu.amazonalexa.com"
+        }
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "amzn1.echo-api.request.d7b8d681-9e32-4eb9-8c92-d3adf804671f",
+        "timestamp": "2017-10-17T12:07:11Z",
+        "locale": "en-US",
+        "intent": {
+            "name": "GetCopies",
+            "confirmationStatus": "CONFIRMED",
+            "slots": {
+                "colour": {
+                    "name": "colour",
+                    "value": "monochrome",
+                    "confirmationStatus": "NONE"
+                },
+                "side": {
+                    "name": "side",
+                    "value": "2",
+                    "confirmationStatus": "NONE"
+                },
+                "copies": {
+                    "name": "copies",
+                    "value": "3",
+                    "confirmationStatus": "NONE"
+                },
+                "staple": {
+                    "name": "staple",
+                    "value": "stapled",
+                    "confirmationStatus": "NONE"
+                }
+            }
+        },
+        "dialogState": "IN_PROGRESS"
+    }
+}

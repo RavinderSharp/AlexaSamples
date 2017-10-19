@@ -17,6 +17,16 @@ module.exports = {
     this.response.speak(speechOutput).listen(repromptOutput);
     this.emit(':responseReady');
   },
+  "GetCopies": function() {
+    console.log('newSessionHandlers GetCopies ' + JSON.stringify(this.event, null, '\t'));
+    this.handler.state = MFP_STATES.COPIESMODE;
+    this.emitWithState("GetCopies");
+  },
+  "ScanDocument": function() {
+    console.log('newSessionHandlers ScanDocument ' + JSON.stringify(this.event, null, '\t'));
+    this.handler.state = MFP_STATES.SCANMODE;
+    this.emitWithState("ScanDocument");
+  },
   "AMAZON.StopIntent": function() {
     this.response.speak("Goodbye!");
     this.emit(':responseReady');

@@ -1,0 +1,73 @@
+{
+    "version": "1.0",
+    "session": {
+        "new": false,
+        "sessionId": "amzn1.echo-api.session.6df68dab-cb1e-4a6e-b21f-5a62f3c3fdff",
+        "application": {
+            "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+        },
+        "attributes": {
+            "STATE": "_STARTMODE",
+            "check": "abcd",
+            "copy" : {
+              "copies": "5",
+              "colour": "colour",
+              "side": "two",
+              "staple": "stapled"
+            }
+        },
+        "user": {
+            "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+        }
+    },
+    "context": {
+        "AudioPlayer": {
+            "playerActivity": "IDLE"
+        },
+        "System": {
+            "application": {
+                "applicationId": "amzn1.ask.skill.041e254a-ed1e-4ddc-9533-91e349a192f7"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.AHS4FGRR3DN5C2SC6WBSMMJNIHVLFICPCAPTPS6JGAT4UVRVNCEL5A5RIZBJXNWJIVMHS2M6AUUSY6K6CBOSYPASG6X6HPXOEDSQG24LADCPLUISOXFHJW5NGUDFZQ3O4OKMEE4EWEAWGGFM42P54DPUQ6YQR2FJPFMUCOPPNI53WIBF2SBP2QMUZACKUZULQ4VDU3CJPTRDAJI"
+            },
+            "device": {
+                "deviceId": "amzn1.ask.device.AEV3BGKBJHKCJDUEDVMZJ4Z3NM7Y54XIXBDA5XBDYG3IDW2WF4VUSZ3EZZFR3QENLYPLKHE7E3BZIHOGLEVBFMTB25ZPDPRO5AC2B5HBRXBOITW2SFNW7VZSV3S7I42GQZPEJBZZGNEHGWSZVBQNYZPY3JRQ",
+                "supportedInterfaces": {
+                    "AudioPlayer": {}
+                }
+            },
+            "apiEndpoint": "https://api.eu.amazonalexa.com"
+        }
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "amzn1.echo-api.request.12a4b87a-c6ea-4edf-abc7-da004e60c08e",
+        "timestamp": "2017-10-17T10:48:18Z",
+        "locale": "en-US",
+        "intent": {
+            "name": "GetCopies",
+            "confirmationStatus": "NONE",
+            "slots": {
+                "side": {
+                    "name": "side",
+                    "confirmationStatus": "NONE"
+                },
+                "colour": {
+                    "name": "colour",
+                    "confirmationStatus": "NONE"
+                },
+                "copies": {
+                    "name": "copies",
+                    "value": "5",
+                    "confirmationStatus": "NONE"
+                },
+                "staple": {
+                    "name": "staple",
+                    "confirmationStatus": "NONE"
+                }
+            }
+        },
+        "dialogState": "STARTED"
+    }
+}

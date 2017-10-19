@@ -5,6 +5,7 @@ const MFP_STATES = require('../enums').MFP_STATES;
 
 module.exports = Alexa.CreateStateHandler(MFP_STATES.STARTMODE, {
   'NewSession': function() {
+    console.log('startHandlers NewSession ' + JSON.stringify(this.event, null, '\t'));
     this.emit('NewSession'); // Uses the handler in newSessionHandlers
   },
   "GetCopies": function() {

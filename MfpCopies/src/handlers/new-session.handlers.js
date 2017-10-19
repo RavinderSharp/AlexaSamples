@@ -4,6 +4,7 @@ const MFP_STATES = require('../enums').MFP_STATES;
 
 module.exports = {
   'NewSession': function() {
+    console.log('newSessionHandlers NewSession ' + JSON.stringify(this.event, null, '\t'));
     var copy = {
       "copies": "1",
       "colour": "colour",
@@ -12,20 +13,14 @@ module.exports = {
     };
     this.attributes['copy'] = copy;
     this.handler.state = MFP_STATES.STARTMODE;
-    const speechOutput = this.t('LAUNCH_MESSAGE');
-    const repromptOutput = this.t('LAUNCH_MESSAGE_REPROMPT');
-    this.response.speak(speechOutput).listen(repromptOutput);
-    this.emit(':responseReady');
-  },
-  "GetCopies": function() {
-    console.log('newSessionHandlers GetCopies ' + JSON.stringify(this.event, null, '\t'));
-    this.handler.state = MFP_STATES.COPIESMODE;
-    this.emitWithState("GetCopies");
-  },
-  "ScanDocument": function() {
-    console.log('newSessionHandlers ScanDocument ' + JSON.stringify(this.event, null, '\t'));
-    this.handler.state = MFP_STATES.SCANMODE;
-    this.emitWithState("ScanDocument");
+    if (this.event.request.type != 'LaunchRequest') {
+      this.emitWithState(this.event.request.intent.name);
+    } else {
+      const speechOutput = this.t('LAUNCH_MESSAGE');
+      const repromptOutput = this.t('LAUNCH_MESSAGE_REPROMPT');
+      this.response.speak(speechOutput).listen(repromptOutput);
+      this.emit(':responseReady');
+    }
   },
   "AMAZON.StopIntent": function() {
     this.response.speak("Goodbye!");

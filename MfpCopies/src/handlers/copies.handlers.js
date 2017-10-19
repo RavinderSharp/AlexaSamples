@@ -9,13 +9,7 @@ function removeSSML(s) {
 
 module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
   'NewSession': function() {
-    var copy = {
-      "copies": "1",
-      "colour": "colour",
-      "side": "two",
-      "staple": "stapled"
-    };
-    this.attributes['copy'] = copy;
+    console.log('copiesHandlers NewSession ' + JSON.stringify(this.event, null, '\t'));
     this.emit('NewSession'); // Uses the handler in newSessionHandlers
   },
   'GetCopies': function() {
@@ -23,7 +17,7 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
     // set state to asking questions
     this.handler.state = MFP_STATES.COPIESMODE;
 
-    console.log('GetCopies ' + JSON.stringify(this.event, null, '\t'));
+    console.log(' copiesHandlers GetCopies ' + JSON.stringify(this.event, null, '\t'));
     if (this.event.request.dialogState === "STARTED") {
 
       var updatedIntent = this.event.request.intent;
@@ -90,7 +84,8 @@ module.exports = Alexa.CreateStateHandler(MFP_STATES.COPIESMODE, {
 
         // Create speech output
         this.response.cardRenderer(this.t('SKILL_NAME'), removeSSML(speechOutput));
-        this.response.speak(speechOutput);
+        const reprompt = this.t('HELP_MESSAGE');
+        this.response.speak(speechOutput).listen(reprompt);;
         this.emit(':responseReady');
       }
     }

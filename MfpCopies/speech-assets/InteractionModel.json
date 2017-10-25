@@ -54,7 +54,7 @@
     {
       "name": "ScanDocument",
       "samples": [
-        "scan the document"
+        "scan document"
       ],
       "slots": []
     }
